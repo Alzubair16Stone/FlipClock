@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+@theme {
+    --bg-classicDark: #1A1A1B;
+    --text-classicDark: #fff;
+    --bg-softLight: #f8f9fa;
+    --text-softLight: #212529;
+    --bg-deepNavy: #001f3f;
+    --text-deepNavy: #ffd700;
+}
+
 body {
-    background-color: var(--color-sky-900);
+    background-color: var(--bg-classicDark);
+    color: var(--text-classicDark);
 }
