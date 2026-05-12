@@ -1,15 +1,17 @@
-export interface backColor {
-    color: "#FFFFFF" | "#212529" | "#FFD700",
+interface Background {
     background: "#1A1A1B" | "#F8F9FA" | "#001F3F"
+}
 
+export interface Color {
+    color: "#FFFFFF" | "#212529" | "#FFD700",
 };
 
-export interface changeColor {
-    id: number,
-    color: backColor,
+export interface ChangeColor {
+    color: "#FFFFFF" | "#212529" | "#FFD700",
+    bg: "#1A1A1B" | "#F8F9FA" | "#001F3F"
 };
 
-export interface setBgImg {
+export interface SetBgImg {
     img: string
 };
 
