@@ -1,16 +1,62 @@
 @import "tailwindcss";
 
 @theme {
-    --color-classicDarkBg: #1A1A1B;
-    --color-classicDark: #fff;
-    --color-softLightBg: #f8f9fa;
-    --color-softLight: #212529;
-    --color-deepNavyBg: #001f3f;
-    --color-deepNavy: #ffd700;
+  --color-classicDarkBg: #1A1A1B;
+  --color-classicDark: #fff;
+  --color-softLightBg: #f8f9fa;
+  --color-softLight: #212529;
+  --color-deepNavyBg: #001f3f;
+  --color-deepNavy: #ffd700;
+}
+
+.flip-card-inner {
+  width: 60px;
+  height: 80px;
+}
+
+.flip-card-text {
+  font-size: 40px;
+  line-height: 80px;
+}
+
+.flip-half {
+  height: 50%;
+}
+
+.clock-gap { gap: 2px; }
+.clock-sep { font-size: 32px; }
+.clock-label { font-size: 10px; }
+.ampm-text { font-size: 14px; }
+
+@media (min-width: 640px) {
+  .flip-card-inner { width: 75px; height: 100px; }
+  .flip-card-text { font-size: 52px; line-height: 100px; }
+  .clock-gap { gap: 6px; }
+  .clock-sep { font-size: 44px; }
+  .clock-label { font-size: 11px; }
+  .ampm-text { font-size: 16px; }
+}
+
+@media (min-width: 1024px) {
+  .flip-card-inner { width: 90px; height: 120px; }
+  .flip-card-text { font-size: 64px; line-height: 120px; }
+  .clock-sep { font-size: 56px; }
+  .ampm-text { font-size: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+  }
 }
 
 body {
-    background-color: var(--color-classicDarkBg);
-    color: var(--color-classicDark);
-    padding: 20px;
+  margin: 0;
+  padding: 0;
+  font-family: monospace, sans-serif;
+}
+
+#app {
+  min-height: 100vh;
 }
