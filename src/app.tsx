@@ -4,7 +4,6 @@ import { getPaletteSync } from 'colorthief';
 import ClockDisplay from './components/ClockDisplay';
 import ControlBar from './components/ControlBar';
 import ThemePanel from './components/ThemePanel';
-import MusicPlayer from './components/MusicPlayer';
 import type { ThemeName, ThemeColors } from './types';
 
 const THEMES: Record<Exclude<ThemeName, 'custom'>, ThemeColors> = {
@@ -31,7 +30,7 @@ export function App() {
     catch { return null; }
   });
   const [palette, setPalette] = useState<string[]>([]);
-  const [activePanel, setActivePanel] = useState<'theme' | 'music' | null>(null);
+  const [activePanel, setActivePanel] = useState<'theme' | null>(null);
   const imageInputRef = useRef<HTMLInputElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
 
@@ -148,7 +147,6 @@ export function App() {
 
       <ControlBar
         onThemeClick={() => setActivePanel(p => p === 'theme' ? null : 'theme')}
-        onMusicClick={() => setActivePanel(p => p === 'music' ? null : 'music')}
         onImageClick={handleImageUpload}
       />
 
@@ -166,10 +164,6 @@ export function App() {
           onClearImage={handleClearImage}
           onClose={() => setActivePanel(null)}
         />
-      )}
-
-      {activePanel === 'music' && (
-        <MusicPlayer onClose={() => setActivePanel(null)} />
       )}
 
       <input
